@@ -15,12 +15,12 @@ exports.handler = async function(event, context, callback) {
     const res = await client.send()
     callback(null, {
       statusCode: 200,
-      body: res
+      body: JSON.stringify(res)
     });
   } catch (e) {
     callback(null, {
       statusCode: 503,
-      body: e
+      body: JSON.stringify(e)
     });
   }
 }
