@@ -2,9 +2,6 @@ const { CustomersMailCloud } = require('customersmailcloud');
 
 exports.handler = async function(event, context, callback) {
   const {email, name, body} = JSON.parse(event.body);
-  console.log(event.body);
-  console.log(name, email);
-  console.log(process.env.API_USER);
   const client = new CustomersMailCloud(process.env.API_USER, process.env.API_KEY)
   client.trial();
   client
